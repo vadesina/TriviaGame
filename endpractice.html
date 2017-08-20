@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Trivia Game</title>
+<script type="text/javascript" src="practice/java/practice.js"></script>
+</head>
+  
+  <body>
+    <div class="container">  
+      <h1> TOTALLY TRIVIAL TRIVIA!</h1>
+      <p>All Done!</p>
+      
+      <div id="correct"></div>
+      <div id="incorrect"></div>
+      <div id="unanswered"></div>
+  </div>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script type="text/javascript">
+   var missed = 0;
+   var correct = 0;
+        for(var i = 0; i< arr.length; i++){
+         for(var o = 0; 0< arr[i].length; o++){
+           if(arr[i][o].value == "true" && arr[i][o].checked){
+             correct++;
+           }
+           else if(arr[i][o].value == "false" && arr[i][o].checked){
+               missed++;
+           }
+           else if(arr[i][o].value == null &&   !(arr[i][o].checked)){
+             unanswered++;
+           }
+           else{
+            unanswered++;
+           }
+          }
+          
+
+         }
+      console.log(missed);
+       console.log(correct);
+       console.log(unanswered);
+
+     
+        $("#correct").text("Correct: " + correct );
+        $("#incorrect").text("Incorrect: " + missed );
+
+         run();
+  </script>
+  </body>
+<style>
+body {
+    background-image: url("http://thepatternlibrary.com/img/bc.png");
+  font-family: sans-serif;
+  opacity: .9 ;
+}
+
+.container {
+  width: 75%;
+  height: 400px;
+  background-color: white;
+  padding-top: 25px;
+  padding-bottom: 65px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-align: center;
+  margin-left: 135px;
+  margin-top: 50px;
+  
+}
+
+h1 {
+  font-family: Impact;
+  font-size: 60px;
+  color: #990000;
+  padding-top: 50px;
+}
+
+p {
+  font-size: 30px;
+}
+</style>

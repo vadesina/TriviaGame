@@ -1,0 +1,150 @@
+<html>
+<head>
+<title>Trivia Game</title>
+<script src="java/practice.js"></script>
+</head>
+  <style>
+    body {
+    background-image: url("http://thepatternlibrary.com/img/bc.png");
+  margin: 0;
+  font-family: sans-serif;
+  opacity: .9 ;
+}
+
+.container {
+  width: 70%;
+  height: 100%;
+  background-color: white;
+  padding-top: 25px;
+  padding-bottom: 65px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-align: center;
+  margin-left: 135px;
+  
+}
+
+h1 {
+  font-family: Impact;
+  font-size: 40px;
+  color: #990000;
+}
+
+b {
+  color: #999999;
+  font-size: 20px;
+}
+
+  </style>
+  <body>
+    <div class="container">  
+      <h1> TOTALLY TRIVIAL TRIVIA!</h1>
+      <div id="time"></div><br>
+      <div class="q1"> 
+        <b>Which TV character said, "Live long and prosper"?</b>        <br> 
+        <div id="a1"> 
+           <input type="radio" name="question" value="false" />  Tommy from Rugrats
+           <input type="radio" name="question" value="true" /> Spock from Star Trek
+           <input type="radio" name="question" value="false" /> Captain Kirk from Star Trek
+           <input type="radio" name="question" value="false" />  Batman from The Dark Night 
+        </div>
+      </div>
+      <div class="q2"> <br>
+        <b>Which US city is known as the City of Brotherly Love?</b>         
+        <div id="a2"> 
+          
+           <input type="radio" name="question1" value="true" />  Philadelphia, Pennsylvania
+           <input type="radio" name="question1" value="false" />  New York, New York        
+           <input type="radio" name="question1" value="false" />   Los Angeles, California
+           <input type="radio" name="question1" value="false" />      Columbus, Ohio 
+          
+        </div>
+      </div>
+      <div class="q3"> <br>
+        <b>Au is the chemical symbol of which element? </b>         <br> 
+        <div id="a3"> 
+          
+           <input type="radio" name="question2" value="false" />  Aluminum
+           <input type="radio" name="question2" value="false" /> Iron      
+           <input type="radio" name="question2" value="true" />  Gold
+           <input type="radio" name="question2" value="false" />  Steel <br><br>
+
+              <a href="file:///C:/Users/Vaughn%20K%20Adesina/TriviaGame/endpractice.html"><button id="submit">Submit</button>
+            <p id = "miss"></p>
+             <p id = "nomiss"></p>
+             <p id = "unanswered"></p>
+           
+        </div>
+      </div>
+    
+    </div>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script type="text/javascript">
+     var first = $("#question");
+     var second = $("#question1");
+     var third = $("#question2");
+     var arr = [first,second,third];
+     var missed = 0;
+     var correct = 0;
+     var unanswered = 0;
+      $("#submit").on("click", function(event) {
+
+     function submitted(){
+       for(var i = 0; i< arr.length; i++){
+         for(var o = 0; 0< arr[i].length; o++){
+           if(arr[i][o].value == "true" && arr[i][o].checked){
+             correct++;
+           }
+           else if(arr[i][o].value == "false" && arr[i][o].checked){
+               missed++;
+           }
+           else if(arr[i][o].value == null ){
+             unanswered++;
+           }
+           else{
+            unanswered++;
+           }
+          }
+          
+
+         }
+      console.log(missed);
+       console.log(correct);
+       console.log(unanswered);
+
+     }
+   });
+
+   var number = 31;
+
+    var intervalId;
+
+    function run() {
+      intervalId = setInterval(decrement, 1000);
+    }
+    var time =  $("#time");
+
+    function decrement() {
+
+      number--;
+
+     time.text("Time Remaining: " + number + " seconds");
+
+      if (number === 0) {
+
+        alert("Time Up!");
+        stop();
+      }
+    }
+     function stop() {
+
+      clearInterval(intervalId);
+    }
+
+    run();
+
+    </script>
+
+  </body>
+  
+</html>
